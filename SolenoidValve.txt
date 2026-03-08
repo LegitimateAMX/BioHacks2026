@@ -1,0 +1,9 @@
+Requires: Arduino UNO, breadboard, IRFZ44N MOSFET, power source, solenoid, 1N4007 diode, 10kΩ resistor, 220Ω resistor
+
+- Connect Arduino GND pin to GND rail, and the 19V source's GND to establish shared electrical reference.
+- Place the MOSFET on the breadboard; connect its left pin (Gate) to Arduino Pin 9 via the 220Ω resistor.
+- Bridge the 10kΩ resistor from the Gate directly to Ground to prevent floating voltage errors.
+- Connect the right pin (Source) to Ground, leaving the middle pin (Drain) open for the solenoid.
+- Wire the positive terminal of the solenoid directly to the positive output of your 19V power source.
+- Connect the negative terminal of the solenoid to the middle pin (Drain) of your IRFZ44N MOSFET.
+- Place the 1N4007 flyback diode across the solenoid's terminals with the striped end (cathode) facing the 19V positive connection.
