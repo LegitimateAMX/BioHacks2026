@@ -1,0 +1,29 @@
+1. The L293D Motor Driver Pinout
+Speed Control (Enable 1): Pin 1
+Direction Control (Input 1 & Input 2): Pins 2 and 7
+Motor Connections (Output 1 & Output 2): Pins 3 and 6
+Ground: Pins 4, 5, 12, 13 (Connecting just one to ground is usually sufficient for small loads, but connecting all helps with heat dissipation).
+Chip Power (5V Logic): Pin 16
+Motor Power (5V - 9V): Pin 8
+Speed Control (Enable 2): Pin 9
+Direction Control (Input 3 & Input 4): Pins 10 and 15
+Motor Connections (Output 3 & Output 4): Pins 11 and 14
+Ground: Pins 12 and 13
+
+2. Circuit Wiring
+- Place the L293D chip in the middle of your breadboard so it straddles the center gap.
+- Connect the Arduino's 5V pin to the breadboard's red power rail, and the GND pin to the blue ground rail.
+- Connect Pin 16 (Logic Power) to the 5V rail.
+- Connect Pin 8 (Motor Power) to the 5V rail. (Note: Use power supply module for this).
+- Connect Pins 4 and 5 to the GND rail.
+- Connect the two wires from your DC Motor to Pin 3 and Pin 6. (Polarity doesn't matter; swapping them just changes which way is "forward").
+- Connect Arduino Pin 5 (must be a PWM pin, usually marked with a ~) to L293D Pin 1 (Enable 1). This will control the speed.
+- Connect Arduino Pin 4 to L293D Pin 2 (Input 1).
+- Connect Arduino Pin 3 to L293D Pin 7 (Input 2). These two pins control the direction.
+
+3. Circuit Wiring Pt. 2
+- Ground the Right Side: Connect Pin 12 and Pin 13 to the breadboard's GND rail (the same one shared with your battery and Arduino).
+- Connect Motor 2: Hook the two wires from your second DC motor to Pin 11 and Pin 14.
+- Connect L293D Pin 9 (Enable 2) to Arduino Pin 6 (This is a PWM pin to control Motor 2's speed).
+- Connect L293D Pin 10 (Input 3) to Arduino Pin 7.
+- Connect L293D Pin 15 (Input 4) to Arduino Pin 8.
