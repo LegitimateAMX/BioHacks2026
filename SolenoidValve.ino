@@ -6,10 +6,11 @@ void setup() {
 
 void loop() {
   Serial.println("Open");
-  analogWrite(valvePin, 160); // 63% duty cycle for ~12V
+  analogWrite(valvePin, 160); // 63% duty cycle for ~12V (important so there is no overheating)
   delay(3000);                // Valve open for 3 seconds
   
   Serial.println("Closed");
   analogWrite(valvePin, 0);   // 0V output
   delay(3000);                // Valve closed for 3 seconds
 }
+
